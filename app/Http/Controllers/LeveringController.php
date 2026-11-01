@@ -26,19 +26,6 @@ class LeveringController extends Controller
 
         $gegevens = $gegevens[0];
 
-        // Controleer of het product actief is (IsActief = 0 betekent inactief)
-        // Als het product inactief is, direct de melding tonen + 4 seconden redirect
-        if ($gegevens->IsActief == 0) {
-            $productNaam     = $gegevens->ProductNaam;
-            $leverancierNaam = $gegevens->LeverancierNaam;
-
-            return view('levering.inactief-product', compact(
-                'productNaam',
-                'leverancierNaam',
-                'leverancierId'
-            ));
-        }
-
         return view('levering.formulier', compact('gegevens'));
     }
 

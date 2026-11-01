@@ -34,6 +34,7 @@
                     </div>
 
                     {{-- Na 4 seconden terugsturen naar Geleverde producten van deze leverancier --}}
+                    <meta http-equiv="refresh" content="4;url={{ route('leverancier.geleverde-producten', $leverancierId) }}">
                     <script>
                         setTimeout(function() {
                             window.location.href = "{{ route('leverancier.geleverde-producten', $leverancierId) }}";

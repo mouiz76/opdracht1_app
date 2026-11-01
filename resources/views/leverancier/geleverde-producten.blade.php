@@ -56,6 +56,7 @@
                         </div>
 
                         {{-- Na 3 seconden terugsturen naar Overzicht leverancier --}}
+                        <meta http-equiv="refresh" content="3;url={{ route('leverancier.overzicht') }}">
                         <script>
                             setTimeout(function() {
                                 window.location.href = "{{ route('leverancier.overzicht') }}";
