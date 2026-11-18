@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'simuleer_leveranciersstoring' => env('JAMIN_SIMULEER_LEVERANCIERSSTORING', false),
 
     /*
     |--------------------------------------------------------------------------
