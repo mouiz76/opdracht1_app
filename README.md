@@ -2,6 +2,15 @@
 
 Webapplicatie ontwikkeld volgens het **MVC-framework (Laravel)**, **OOP** en **PDO** voor Jamin Magazijn beheer.
 
+## Backend Opdracht 3 – Wijzigen leverancier
+
+Open **Wijzigen Leveranciers** op het managerdashboard om leveranciers en contactgegevens te wijzigen. Het overzicht toont maximaal vier leveranciers per pagina.
+
+- [Installatie, testomgeving en storingssimulatie](docs/Opdracht-3.md)
+- [Klasse-diagram](docs/Klasse-diagram.md) en [database-export](docs/Create-script-Jamin.sql)
+- [Database Specificatie Tabellen](docs/Database-Specificatie-Tabellen.docx), [Testplan](docs/Testplan.docx) en [Testrapport](docs/Testrapport.docx)
+- [Browserdemo van 47 seconden](vids/opdracht3-jamin.mp4)
+
 ## Project Informatie
 - **Vak:** Backend Programming (BE-opdracht 01)
 - **Onderwerp:** Realiseren van User Story 01 & User Story 02
