@@ -58,6 +58,12 @@
                         </svg>
                         Overzicht Leveranciers
                     </a>
+                    @can('wijzig-leveranciers')
+                        <a href="{{ route('leverancier.beheer.index') }}"
+                           class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white text-sm font-semibold rounded-md hover:bg-indigo-700 shadow-sm">
+                            Wijzigen Leveranciers
+                        </a>
+                    @endcan
                 </div>
             </div>
         </div>
