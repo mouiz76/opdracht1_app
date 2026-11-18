@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\MagazijnController;
+use App\Http\Controllers\LeverancierBeheerController;
 use App\Http\Controllers\LeverancierController;
 use App\Http\Controllers\LeveringController;
+use App\Http\Controllers\MagazijnController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,6 +28,13 @@ Route::middleware('auth')->group(function () {
     // Leverancier routes (Opdracht 2 - Userstory 1)
     Route::get('/leveranciers', [LeverancierController::class, 'overzicht'])->name('leverancier.overzicht');
     Route::get('/leveranciers/{leverancierId}/producten', [LeverancierController::class, 'geleverdeProducten'])->name('leverancier.geleverde-producten');
+
+    Route::prefix('leveranciers/beheer')->name('leverancier.beheer.')->middleware('can:wijzig-leveranciers')->group(function () {
+        Route::get('/', [LeverancierBeheerController::class, 'index'])->name('index');
+        Route::get('/{leverancierId}', [LeverancierBeheerController::class, 'show'])->whereNumber('leverancierId')->name('show');
+        Route::get('/{leverancierId}/wijzig', [LeverancierBeheerController::class, 'edit'])->whereNumber('leverancierId')->name('edit');
+        Route::patch('/{leverancierId}', [LeverancierBeheerController::class, 'update'])->whereNumber('leverancierId')->name('update');
+    });
 
     // Levering routes (Opdracht 2 - Userstory 2)
     Route::get('/leveranciers/{leverancierId}/producten/{productId}/levering', [LeveringController::class, 'formulier'])->name('levering.formulier');
